@@ -57,6 +57,23 @@
                     alert("您选择的是:"+ domObj.value)
                 })
             })
+
+            $("#btn06").click(function () {
+
+                $.ajax({
+                    type: "POST",
+                    url: "www.baidu.com",
+                    //请求参数(可以直接写json,也是键值对的形式)
+                    data: {"keys":"emp"},
+                    //成功之后的回调函数
+                    success: function(emp){
+                        alert( "Data Saved: " + emp );
+                    }
+                });
+            })
+
+
+
         })
     </script>
 
@@ -91,5 +108,7 @@
     <button id="btn03">选择单选框的value属性值</button>
     <button id="btn04">选择文件上传框并输出用户选择的文件</button>
     <button id="btn05">选择复选框并输出用户选择的值</button>
+
+    <button id="btn06">AJAX异步请求后台数据</button>
 </body>
 </html>
