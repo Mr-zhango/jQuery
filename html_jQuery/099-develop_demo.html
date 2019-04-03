@@ -12,7 +12,7 @@
         $(function () {
 
             $("#btn06").click(function () {
-                let jsonParam = '{"projectName":"项目一"}'
+                let jsonParam = '{"projectName":"项目","auditType":"例行审计22","channelAttribute":"1"}'
                 $.ajax({
                     type: "post",
                     url: "http://localhost:8080/v1/api/abwpworkplanmain/findLastWorkPlanDetailList",
@@ -20,7 +20,7 @@
                     data: {"jsonParam": jsonParam},
                     //成功之后的回调函数
                     success: function (emp) {
-                        alert("Data Saved: " + emp);
+                        console.log(emp)
                     }
                 });
             })
